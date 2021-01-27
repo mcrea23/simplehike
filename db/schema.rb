@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(version: 2021_01_27_171230) do
     t.integer "rating"
     t.string "difficulty"
     t.string "content"
-    t.integer "length"
+    t.float "length"
     t.string "name"
+    t.integer "park_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

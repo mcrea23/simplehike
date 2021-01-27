@@ -4,8 +4,9 @@ class CreateTrails < ActiveRecord::Migration[6.1]
       t.integer :rating
       t.string :difficulty
       t.string :content
-      t.integer :length
+      t.float :length
       t.string :name
+      t.integer :park_id
 
       t.timestamps
     end
