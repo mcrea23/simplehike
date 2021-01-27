@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_171230) do
     t.string "name"
     t.integer "age"
     t.string "hikes"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_171230) do
   create_table "parks", force: :cascade do |t|
     t.string "location"
     t.string "name"
+    t.integer "trail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_171230) do
     t.integer "rating"
     t.string "difficulty"
     t.string "content"
+    t.integer "hiker_id"
+    t.integer "trail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
