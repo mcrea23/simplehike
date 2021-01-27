@@ -1,24 +1,27 @@
-# README
+<h1 align="center">Welcome to simplehike 👋</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: McCode" src="https://img.shields.io/badge/License-McCode-yellow.svg" />
+  </a>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Search, log, and review hiking trails
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+```sh
+npm install
+```
 
-* System dependencies
+## Author
 
-* Configuration
+👤 **Mcrea Smith**
 
-* Database creation
+* Github: [@mcrea23](https://github.com/mcrea23)
 
-* Database initialization
+## Show your support
 
-* How to run the test suite
+Give a ⭐️ if this project helped you!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
