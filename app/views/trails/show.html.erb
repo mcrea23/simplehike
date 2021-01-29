@@ -1,0 +1,13 @@
+<h1>List of all Trails</h1>
+<br>
+<% @trail.all.each do |t| %>
+<div class="container">
+<ul>
+<li><%= t.name %></li>
+<li><%=t.length %> miles </li>
+<li><%=t.difficulty.capitalize %></li>
+<li><%=t.rating %></li>
+<li><%=t.park_id %></li>
+</ul>
+<% end %>
+</div>

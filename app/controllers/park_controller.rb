@@ -1,2 +1,0 @@
-class ParkController < ApplicationController
-end
