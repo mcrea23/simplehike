@@ -12,6 +12,9 @@
   </head>
 
   <body>
+
+  <%= render partial: 'layouts/nav', locals: { navbar_color: "green darken-3"} %>
+  <%= render 'layouts/errors' %>
   <div class="container">
     <%= yield %>
     <ul>

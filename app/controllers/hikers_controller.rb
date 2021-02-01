@@ -1,4 +1,5 @@
 class HikersController < ApplicationController
+
   def new
     @hiker = Hiker.new
   end
@@ -6,14 +7,16 @@ class HikersController < ApplicationController
   def create
     @hiker = Hiker.new(user_params)
     if @hiker.save
+      session[:user_id] = @hiker.id
       redirect_to parks_path
     else
-      flash[:errors] = @hiker.errors.full_messages
+      flash.now[:error] = @hiker.errors.full_messages
       render :new
     end
   end
 
-  private 
+
+  private
 
   def user_params
     params.require(:hiker).permit(:username, :password)

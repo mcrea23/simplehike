@@ -1,13 +1,14 @@
 <br>
-<h1>Sign Up</h1>
-<%= form_for @hiker, url: signup_path, do |f| %>
-<div class='input-field'>
-<%= f.label :username%>
-<%= f.text_field :username, autofocus: true%>
+<h1>Signup</h1>
+<%= form_for @hiker, url: signup_path do |f| %>
+<div class="input-field">
+<%= f.label :username %>
+<%= f.text_field :username, autofocus: true %>
 </div>
-<div class='input-field'>
-<%= f.label :password%>
-<%= f.password_field :password%>
+<div class="input-field">
+<%= f.label :password %>
+<%= f.password_field :password %>
 </div>
-<%= f.submit 'Signup'%>
+
+<%= f.submit "Signup"%>
 <% end %>
