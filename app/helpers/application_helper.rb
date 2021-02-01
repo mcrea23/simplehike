@@ -6,14 +6,14 @@ module ApplicationHelper
           link_to("Parks", parks_path)
         end +
         content_tag("li") do
-          link_to("Logout", destroy_sessions_path, method: "DELETE")
+          link_to("Logout", destroy_user_sessions_path, method: "DELETE")
         end
       else
         content_tag("li") do
-          link_to("Login", "#")
+          link_to("Login", "login_path")
         end +
         content_tag("li") do
-          link_to("Signup", "#")
+          link_to("Signup", "signup_path")
         end
       end
     end

@@ -10,4 +10,5 @@ resources :reviews
 get '/signup', to: 'hikers#new', as: 'signup'
 post '/signup', to: 'hikers#create' 
 
+delete '/logout', to: "sessions#destroy", as: "destroy_user_sessions"
 end
