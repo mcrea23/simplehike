@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @hiker = Hiker.find_by_username(params[:username])
 
+    if @hiker && @hiker.authenticate(params[:password]) 
+    session[:user_id] = @hiker.id
+    end
   end
 
   def destroy

@@ -10,10 +10,10 @@ module ApplicationHelper
         end
       else
         content_tag("li") do
-          link_to("Login", "login_path")
+          link_to("Login", login_path)
         end +
         content_tag("li") do
-          link_to("Signup", "signup_path")
+          link_to("Signup", signup_path)
         end
       end
     end

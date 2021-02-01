@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def current_user
     Hiker.find_by_id(session[:user_id]) if user_signed_in?
   end
+
+  def login_user
+    sessions[:user_id] = @hiker.id
+  end
 end

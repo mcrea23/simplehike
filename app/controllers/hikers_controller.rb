@@ -7,7 +7,7 @@ class HikersController < ApplicationController
   def create
     @hiker = Hiker.new(user_params)
     if @hiker.save
-      session[:user_id] = @hiker.id
+      login_user
       redirect_to parks_path
     else
       flash.now[:error] = @hiker.errors.full_messages
