@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.1]
       t.integer :rating
       t.string :difficulty
       t.string :content
-      t.integer :hiker_id
+      t.integer :user_id
       t.integer :trail_id
 
       t.timestamps

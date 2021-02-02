@@ -1,8 +1,12 @@
-<nav class="<%= navbar_color %>">
-<div class="container">
-<%= link_to("Home", root_path, class: "brand-logo") %>
-<ul class="right">
-<%= render_nav_links (user_signed_in?) %>
-</ul>
-</div>
-</nav>
+<nav class="#004d40 teal darken-4">
+<div class="nav-wrapper">
+  <%= link_to("SimpleHike", root_path, class: "brand-logo left") %>
+   <ul id="nav-mobile" class="right">
+    <li> <%= link_to "Home", root_path%></li>
+    <li> <%= link_to "Parks", parks_path%></li>
+    <li> <%= link_to "Sign Up", new_user_registration_path %></li>
+    <li> <%= link_to "Log In", new_user_session_path %></li>
+      </ul>
+    </div>
+  </nav>
+

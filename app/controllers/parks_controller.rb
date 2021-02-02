@@ -4,6 +4,7 @@ class ParksController < ApplicationController
   end
 
   def show
-    @park = Park.find_by_id(:id)
-  end
+    @park = Park.find_by_id(params[:id])
+    @trail = Trail.find_by(params[:park_id])
+   end
 end
