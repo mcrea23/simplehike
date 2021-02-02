@@ -26,6 +26,8 @@ gem 'devise'
 # gem 'image_processing', '~> 1.2'
 gem 'bcrypt'
 # Reduces boot times through caching; required in config/boot.rb
+gem 'omniauth-facebook', '~> 1.0.0.pr2'
+
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do

@@ -1,7 +1,7 @@
 module ApplicationHelper
-  def render_nav_links(signed_in)
+  def render_nav_links
     content_tag("ul", class: "right") do 
-      if signed_in?
+      if user_signed_in?
         content_tag("li") do 
           link_to("Parks", parks_path)
         end +
@@ -17,6 +17,9 @@ module ApplicationHelper
         end +
         content_tag("li") do
           link_to("Signup", new_user_registration_path)
+        end +
+        content_tag("li") do
+          link_to("Sign in with Facebook", user_facebook_omniauth_authorize_path, method: :post)
         end
       end
     end

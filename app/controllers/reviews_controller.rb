@@ -1,6 +1,4 @@
 class ReviewsController < ApplicationController
-  before_action :set_trail
-  before_action :set_review, only: [:edit, :update, :destroy]
 
   def new
     @review = Review.new
@@ -45,10 +43,3 @@ def review_params
   params.require(:review).permit(:rating, :content)
 end
 
-def set_trail
-  @trail = Trail.find(params[:trail_id])
-end
-
-def set_review
-  @review = Review.find(params[:id])
-end
