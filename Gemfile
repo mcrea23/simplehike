@@ -21,16 +21,19 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'bcrypt'
+gem "omniauth-rails_csrf_protection"
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
+gem 'omniauth-facebook'
+gem 'ratyrate', :github => 'wazery/ratyrate', :branch => 'snyk-fix-d7d6a71c7c821142584e39c5cbaf202f'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'omniauth-facebook', '~> 1.0.0.pr2'
-
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'pry'
 
-gem 'ratyrate'
+
 
 
 group :development, :test do

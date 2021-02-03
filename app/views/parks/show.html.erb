@@ -17,14 +17,16 @@
 
 <tbody>
 <tr>
-<td><%= trail.name %></td>
+<td><%= link_to trail.name, trail_path(trail) %></td>
 <td><%= trail.length %></td>
 <td><%= trail.difficulty %></td>
 <td><%= trail.rating %></td>
 <td><%= link_to "New Review", new_trail_review_url(@trail) %></td>
+</tr>
 
 
 <% end %>
 </tr>
 </tbody>
 </table>
+

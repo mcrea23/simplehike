@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -25,7 +27,7 @@ class User < ApplicationRecord
       user.image = auth.info.image # assuming the user model has an image
     end
   end
-  
+
   private
   def downcase_email
     self.email = self.email.downcase

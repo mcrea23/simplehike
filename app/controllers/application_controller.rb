@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  add_flash_types :error
 
   # helper_method :user_signed_in?, :current_user
   # def user_signed_in?

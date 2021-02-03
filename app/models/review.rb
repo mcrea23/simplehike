@@ -2,7 +2,7 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :trail
 
-  ratyrate_rateable 'trail_rating'
+  
 
   # REVIEW_DIFFICULTY = ["Easy", "Moderate", "Hard"]
   # REVIEW_RATING = ["1", "2", "3", "4", "5"]
