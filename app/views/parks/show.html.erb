@@ -8,7 +8,8 @@
 <th>Name</th>
 <th>Length</th>
 <th>Difficulty</th>
-<th>Review</th>
+<th>Reviews</th>
+<th>Create</th>
 </tr>
 <% @park.trails.each do |trail| %>
 </tr>
@@ -18,7 +19,8 @@
 <tr>
 <td><%= link_to trail.name, trail_path(trail) %></td>
 <td><%= trail.length %></td>
-<td><%= trail.difficulty %></td>
+<td><%= trail.difficulty.capitalize %></td>
+<td><%= link_to "Show All Reviews", trail_reviews_url(trail) %></td>
 <td><%= link_to "New Review", new_trail_review_url(trail) %></td>
 </tr>
 

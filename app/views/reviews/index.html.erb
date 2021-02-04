@@ -1,0 +1,9 @@
+<br>
+<h5>List of all reviews for <%= @trail.name %></h5>
+<% @reviews.each do |review| %>
+<ul>
+  <%= @user_reviewed.name %> review: 
+ <br>
+<%= review.content %>
+</ul>
+<% end %>

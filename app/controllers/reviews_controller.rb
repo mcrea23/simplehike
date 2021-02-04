@@ -28,6 +28,13 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find(params[:id])
+  end
+
+  def index
+    @trail = Trail.find(params[:trail_id])
+    @reviews = Review.where(:trail_id == @trail)
+    @user_reviewed = User.find_by(params[:id])
   end
 
   def update
@@ -47,6 +54,6 @@ end
 private
   
 def review_params
-  params.require(:review).permit(:content, :trail_id, :user_id)
+  params.require(:review).permit(:content, :title, :trail_id, :user_id)
 end
 

@@ -1,6 +1,7 @@
 <br>
-<h1>List of all Trails</h1>
+<h5>1 ONLY Trail</h5>
 <br>
+<table class="center, striped">
 <div class="container">
 <ul> 
 <li>Name: <%= @trail.name %></li>
@@ -8,4 +9,6 @@
 <li>Length: <%= @trail.length %></li>
 <%= link_to "New Review", new_trail_review_url(@trail) %>
 </ul>
+</table>
 </div>
+

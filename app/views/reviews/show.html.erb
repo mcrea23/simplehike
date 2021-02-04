@@ -1,5 +1,5 @@
 <br>
- <h4> <%= @review.trail.name %> Review </h4>
+<h4> <%= @review.trail.name %> Review </h4>
 </p>
 <p>
 Trail Difficulty: <%= @review.trail.difficulty.capitalize %>
@@ -16,3 +16,8 @@ Trail Difficulty: <%= @review.trail.difficulty.capitalize %>
     </tr>
   </tbody>  
 </table>
+
+<% if current_user %>
+  <%= link_to "Edit Review", edit_trail_review_path(current_user), class: "btn btn-primary btn-xs" %>
+<% end %>
+
