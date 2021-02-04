@@ -1,21 +1,11 @@
 <br>
 <h1>Add Review</h1>
 <%= form_for @review do |f| %>
-<%= f.hidden_field :user_id, value: @current_user.id %>
+<%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.hidden_field :trail_id, value: @trail.id %>
-
-<div id = “rating-form”> 
-<label> Rating</label> </div>
 
   <p><%= f.label :comment %><br>
   <%= f.text_area :content %></p>
 
   <p><%= f.submit %></p>
 <% end %>
-
-<script>
-$(‘#rating-form’).raty({
-path: ‘/assets/’,
-scoreName: ‘review[rating]’
-});
-</script>

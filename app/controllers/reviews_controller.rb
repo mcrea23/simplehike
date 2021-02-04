@@ -2,22 +2,29 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @trail = Trail.find(params[:trail_id])
   end
 
   def create
     @review = Review.new(review_params)
+    @user = current_user
+    @user_reviewed = User.find_by(params[:id])
+    
+    @trail = Trail.find_by(params[:id])
     @review.trail_id = @trail.id
-    @review.user_id = current_user.id
     
     if @review.save
-      redirect_to trail_path(@trail)
-    else
+      flash[:notice] = "Your review was successfully posted"
+      redirect_to review_path(@review)
+    else 
+      flash[:notice] = "Review could not be created. Please check the errors."
       render 'new'
     end
   end
 
   def show
-
+    @review = Review.find(params[:id])
+    @user_reviewed = User.find_by(params[:id])
   end
 
   def edit
@@ -27,7 +34,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to trail_path(@trail)
     else
-      render 'edit'
+      render :edit
     end
   end
   
@@ -40,6 +47,6 @@ end
 private
   
 def review_params
-  params.require(:review).permit(:rating, :content)
+  params.require(:review).permit(:content, :trail_id, :user_id)
 end
 

@@ -1,0 +1,18 @@
+<br>
+ <h4> <%= @review.trail.name %> Review </h4>
+</p>
+<p>
+Trail Difficulty: <%= @review.trail.difficulty.capitalize %>
+</p>
+
+<p>Reviews:</p>
+<table class="center, striped"> 
+  <thead>
+<tr> Here's what <%= @user_reviewed.name %> had to say: </tr>
+  </thead>
+ <tbody>
+    <tr>
+ <td> <%= @review.content %> </td>
+    </tr>
+  </tbody>  
+</table>
