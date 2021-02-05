@@ -1,9 +1,19 @@
 <br>
-<h5>List of all reviews for <%= @trail.name %></h5>
+<h1><b>List of all reviews for <%= @trail.name %></h1>
+<h2><%= link_to "Leave a New Review", new_trail_review_url(@trail) %></h2>
+
+
 <% @reviews.each do |review| %>
+<% if review.trail_id == @trail.id %> 
 <ul>
-  <%= @user_reviewed.name %> review: 
+ Here's what <%= @user_reviewed.name %> had to say about this dumb trail: 
  <br>
 <%= review.content %>
 </ul>
+<% else %>
 <% end %>
+<% end %>
+
+
+
+

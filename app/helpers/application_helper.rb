@@ -6,9 +6,6 @@ module ApplicationHelper
           link_to("Parks", parks_path)
         end +
         content_tag("li") do
-          link_to("Create new review", new_review_path)
-        end +
-        content_tag("li") do
           link_to("Logout", destroy_user_session_path, method: "DELETE")
         end
       else

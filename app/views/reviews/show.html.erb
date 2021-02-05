@@ -16,8 +16,6 @@ Trail Difficulty: <%= @review.trail.difficulty.capitalize %>
     </tr>
   </tbody>  
 </table>
+<%= link_to "See what others have to say about this trail:", trail_reviews_url(@trail)%>
 
-<% if current_user %>
-  <%= link_to "Edit Review", edit_trail_review_path(current_user), class: "btn btn-primary btn-xs" %>
-<% end %>
 

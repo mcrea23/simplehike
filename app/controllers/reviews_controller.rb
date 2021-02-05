@@ -9,9 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @user = current_user
     @user_reviewed = User.find_by(params[:id])
-    
-    @trail = Trail.find_by(params[:id])
-    @review.trail_id = @trail.id
+    @trail = @review.trail_id
     
     if @review.save
       flash[:notice] = "Your review was successfully posted"
@@ -25,6 +23,7 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
     @user_reviewed = User.find_by(params[:id])
+    @trail = @review.trail_id
   end
 
   def edit
@@ -46,7 +45,9 @@ class ReviewsController < ApplicationController
   end
   
   def destroy
+    @reviews = Review.find(params[:id])
     @review.destroy
+    flash[:notice] = "Review was deleted"
     redirect_to trail_path(@trail)
   end
 end
