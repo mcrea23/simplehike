@@ -9,7 +9,7 @@ resources :trails do
 end
 resources :parks 
 resources :reviews 
-
+delete '/review/:id', to: 'reviews#destroy', as: 'destroy_review_confirm'
 # get '/login', to: 'sessions#new', as: 'login'
 # post '/login', to: 'sessions#create' 
 

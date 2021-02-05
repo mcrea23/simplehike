@@ -1,17 +1,16 @@
 <br>
-<h1><b>List of all reviews for <%= @trail.name %></h1>
-<h2><%= link_to "Leave a New Review", new_trail_review_url(@trail) %></h2>
-
+<h5>List of all reviews for <%= @trail.name %></h5>
+<p><%= link_to "Leave a New Review", new_trail_review_url(@trail) %></p>
 
 <% @reviews.each do |review| %>
-<% if review.trail_id == @trail.id %> 
-<ul>
- Here's what <%= @user_reviewed.name %> had to say about this dumb trail: 
- <br>
-<%= review.content %>
-</ul>
-<% else %>
-<% end %>
+  <% if review.trail_id == @trail.id %><br>
+    <ul> Here's what <%= @user_reviewed.name %> had to say: </ul>
+    <%= review.content %>
+    <% else %>
+  <% end %><br>
+  <% if current_user %>
+    <%= link_to 'Delete', destroy_review_confirm_path(review), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-xs" %>
+  <% end %>
 <% end %>
 
 

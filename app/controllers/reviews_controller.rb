@@ -45,10 +45,11 @@ class ReviewsController < ApplicationController
   end
   
   def destroy
-    @reviews = Review.find(params[:id])
+    @review = Review.find(params[:id])
+    @trail = Trail.find_by_id(@review.trail_id)
     @review.destroy
     flash[:notice] = "Review was deleted"
-    redirect_to trail_path(@trail)
+    redirect_to trail_reviews_path(@trail)
   end
 end
 
