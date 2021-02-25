@@ -12,11 +12,9 @@ class ReviewsController < ApplicationController
     @trail = @review.trail_id
     
     if @review.save
-      flash[:notice] = "Your review was successfully posted"
       redirect_to review_path(@review)
     else 
-      flash[:notice] = "Review could not be created. Please check the errors."
-      render 'new'
+      redirect_to new_trail_review_url(@trail), notice: "Review cannot be blank."
     end
   end
 
@@ -37,9 +35,12 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to trail_path(@trail)
+      flash[:notice] = "Review changed"
+      redirect_to review_path(@review)
     else
+      flash[:notice] = @comment.errors.full_messages
       render :edit
     end
   end
@@ -48,7 +49,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @trail = Trail.find_by_id(@review.trail_id)
     @review.destroy
-    flash[:notice] = "Review was deleted"
     redirect_to trail_reviews_path(@trail)
   end
 end

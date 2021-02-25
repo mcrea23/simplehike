@@ -9,5 +9,12 @@ class TrailsController < ApplicationController
     @trail = Trail.all
   end
 
+  def longest
+    @trail = Trail.longest 
+    render :show 
+  end
+
+  def edit
+  end
 
 end

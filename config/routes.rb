@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  root 'parks#index'
+  root 'parks#index' #homepage
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+get "/trails/longest", to: "trails#longest" #custom route
+
 resources :trails do 
-  resources :reviews 
+  resources :reviews #nested 
 end
+
 resources :parks 
 resources :reviews 
-delete '/review/:id', to: 'reviews#destroy', as: 'destroy_review_confirm'
-# get '/login', to: 'sessions#new', as: 'login'
-# post '/login', to: 'sessions#create' 
-
-# delete '/logout', to: "sessions#destroy", as: "destroy_user_sessions"
 end

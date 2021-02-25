@@ -3,4 +3,6 @@ class Trail < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
 
+  scope :longest, -> {order(length: :desc).limit(1).first}
 end
+
