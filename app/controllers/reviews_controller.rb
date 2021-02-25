@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @trail = Trail.find(params[:trail_id])
+    @trail = Trail.find_by_id(params[:trail_id])
   end
 
   def create

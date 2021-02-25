@@ -1,5 +1,5 @@
 <br>
- <h4> Add Review for <%= @trail.name %> </h4>
+<h4> Add Review for <%= @trail.name %> </h4>
 <%= form_for @review do |f| %>
 <%= f.hidden_field :user_id, value: current_user.id %>
 <%= f.hidden_field :trail_id, value: @trail.id %>

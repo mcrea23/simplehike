@@ -8,3 +8,8 @@
 </ul>
 
 <% end %>
+
+<%= form_tag(parks_search_path) do %>
+ <%= text_field_tag :park_name %>
+  <%= submit_tag "search" %>
+<% end %>
