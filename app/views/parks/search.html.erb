@@ -1,5 +1,10 @@
 <br>
-<h6>Search</h6>
+<h6>Search Results:</h6>
 
-<%= @park.name %>
-<table class="center, striped">
+<% @parks.each do |park| %>
+  <%= park.name %>
+  <div>
+  <%= park.location %>
+<% end %>
+</div>
+

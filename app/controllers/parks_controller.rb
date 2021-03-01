@@ -9,10 +9,11 @@ class ParksController < ApplicationController
    end
 
    def search
-    if @park = Park.where(:name => params[:park_name]).first
-    @park
-    else 
-      @park = Park.where(:location => params[:park_name]).first
+    @parks = Park.where(:name => params[:park_name])
+    if !@parks.empty?
+      @parks
+    else
+      @parks = Park.where(:location => params[:park_location])
     end
   end
 end
